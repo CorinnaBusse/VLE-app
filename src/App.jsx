@@ -195,7 +195,7 @@ function ApparatusGraphic({ xLiquid, T, Ttarget, y, mTotal }) {
       <rect x={100} y={30} width={62} height={165} fill="none" />
 
       <CompBar cx={150} cy={172} w={64} h={9} frac={xLiquid} label={`Flüssigkeit: ${de(xLiquid * 100, 0)} % Benzol`} />
-      <text x={105} y={38} textAnchor="middle" fontFamily={MONO} fontSize="9.5" fontWeight="700" fill={INK}>ϑ = {de(T, 1)} °C</text>
+      <text x={70} y={38} textAnchor="middle" fontFamily={MONO} fontSize="13" fontWeight="700" fill={INK}>ϑ = {de(T, 1)} °C</text>
 
       {/* Dampf: steigt auf, dann nach rechts zum Kondensator */}
       <path d="M150,28 L150,12 L235,12" fill="none" stroke="#B9B7B4" strokeWidth={4} />
@@ -513,10 +513,10 @@ export default function DampfFluessigkeitMonitor() {
                 <div style={{ fontFamily: MONO, fontSize: 16, color: OHM_RED, fontWeight: 700 }}>{de(TRef.current, 2)} °C</div>
                 <div style={{ fontFamily: MONO, fontSize: 10.5, color: GRAY }}>Ziel: {de(target.T, 2)} °C</div>
               </PanelBox>
-              <PanelBox title={<>x<sub>Benzol</sub> (Flüssigkeit)</>}>
+              <PanelBox title={<>x<sub>Benzol</sub></>} noUppercase>
                 <div style={{ fontFamily: MONO, fontSize: 16, color: OHM_BLUE, fontWeight: 700 }}>{de(target.x1 * 100, 1)} %</div>
               </PanelBox>
-              <PanelBox title={<>y<sub>Benzol</sub> (Dampf)</>}>
+              <PanelBox title={<>y<sub>Benzol</sub></>} noUppercase>
                 <div style={{ fontFamily: MONO, fontSize: 16, color: OHM_RED, fontWeight: 700 }}>{de(target.y1 * 100, 1)} %</div>
               </PanelBox>
             </div>
